@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	
+	<include layout="@layout/toolbar" />
+		
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center"
+		android:padding="10dp"
+		android:layout_weight="1.0">
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0">
+
+			<com.google.android.material.textfield.TextInputLayout
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginTop="10dp"
+				android:layout_marginEnd="10dp"
+				android:layout_marginRight="10dp"
+				android:hint="Input">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/decruptString"
+					style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:inputType="textMultiLine|textNoSuggestions"
+					android:gravity="left|top"/>
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="wrap_content"
+			android:orientation="vertical">
+
+			<androidx.appcompat.widget.AppCompatImageButton
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:src="@drawable/content_paste"
+				android:id="@+id/paste_input"/>
+			
+			<androidx.appcompat.widget.AppCompatImageButton
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:src="@drawable/content_copy"
+				android:id="@+id/copy_input"/>
+
+			<androidx.appcompat.widget.AppCompatImageButton
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:src="@drawable/close"
+				android:id="@+id/clear_input"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="1"
+		android:layout_below="@+id/outString"
+		android:layout_centerHorizontal="true"
+		android:layout_margin="10dp"
+		android:layout_marginLeft="20dp"
+		android:layout_marginRight="20dp">
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="0"
+			android:layout_below="@+id/outString"
+			android:layout_centerHorizontal="true"
+			android:id="@+id/btn_decode"
+			android:layout_weight="1.0"/>
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="1"
+			android:layout_below="@+id/btn_decode"
+			android:layout_centerHorizontal="true"
+			android:id="@+id/btn_decode1"
+			android:layout_weight="1.0"/>
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="2"
+			android:layout_below="@+id/btn_decode1"
+			android:layout_centerHorizontal="true"
+			android:id="@+id/btn_decode2"
+			android:layout_weight="1.0"/>
+
+		<androidx.appcompat.widget.AppCompatButton
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="3"
+			android:layout_below="@+id/btn_decode2"
+			android:layout_centerHorizontal="true"
+			android:id="@+id/btn_decode3"
+			android:layout_weight="1.0"/>
+		
+		<androidx.appcompat.widget.AppCompatButton
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="4"
+			android:layout_below="@+id/btn_decode3"
+			android:layout_centerHorizontal="true"
+			android:id="@+id/btn_decode4"
+			android:layout_weight="1.0"/>
+		
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center"
+		android:padding="10dp"
+		android:layout_weight="1.0">
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:layout_weight="1.0">
+
+			<com.google.android.material.textfield.TextInputLayout
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginTop="10dp"
+				android:layout_marginEnd="10dp"
+				android:layout_marginRight="10dp"
+				android:hint="Output">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/outString"
+					style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:inputType="textMultiLine|textNoSuggestions"
+					android:gravity="left|top"/>
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="wrap_content"
+			android:orientation="vertical">
+
+			<androidx.appcompat.widget.AppCompatImageButton
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:src="@drawable/content_paste"
+				android:id="@+id/paste_output"/>
+			
+			<androidx.appcompat.widget.AppCompatImageButton
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:src="@drawable/content_copy"
+				android:id="@+id/copy_output"/>
+
+			<androidx.appcompat.widget.AppCompatImageButton
+				android:layout_width="wrap_content"
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:src="@drawable/close"
+				android:id="@+id/clear_output"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
+
