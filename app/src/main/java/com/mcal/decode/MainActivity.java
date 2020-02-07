@@ -30,8 +30,8 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatImageButton;
 import com.mcal.decode.data.Preferences;
+import com.mcal.decode.utils.Utils;
 import com.mcal.decode.view.CenteredToolBar;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener
 {
@@ -77,19 +77,19 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 	public void onClick(View v) {
         if (v == decode) {
             String i = input.getText().toString();
-			output.setText(xorPlus(i, 0));
+			output.setText(Utils.xorPlus(i, 0));
         } else if (v == decode1) {
             String i = input.getText().toString();
-			output.setText(xorPlus(i, 1));
+			output.setText(Utils.xorPlus(i, 1));
         } else if (v == decode2) {
             String i = input.getText().toString();
-			output.setText(xorPlus(i, 2));
+			output.setText(Utils.xorPlus(i, 2));
         } else if (v == decode3) {
             String i = input.getText().toString();
-			output.setText(xorPlus(i, 3));
+			output.setText(Utils.xorPlus(i, 3));
         } else if (v == decode4) {
             String i = input.getText().toString();
-			output.setText(xorPlus(i, 4));
+			output.setText(Utils.xorPlus(i, 4));
         } else if (v == pasteInput) {
             // If it does contain data, decide if you can handle the data.
 			if (!(myClipboard.hasPrimaryClip())) {
@@ -145,51 +145,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 	private void setupToolbar(String title) {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setTitle(title);
+        getSupportActionBar().setTitle(title);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
-    }
-	
-	public static String xorPlus(String str, int i) {
-		try {
-			StringBuilder stringBuilder = new StringBuilder();
-			for (int i2 = 0; i2 < str.length(); i2++) {
-				stringBuilder.append((char) (str.charAt(i2) ^ a(i)[i2 % a(i).length]));
-			}
-			return stringBuilder.toString();
-		} catch (Exception e) {
-			return "";
-		}
-	}
-	
-	public static char[] a(int i) {
-		switch (i) {
-			case 0:
-				return new char[]{'鉝'};
-			case 1:
-				return new char[]{'々'};
-			case 2:
-				return new char[]{'〆'};
-			case 3:
-				return new char[]{'\u0670'};
-			case 4:
-				return new char[]{'ۖ'};
-			default:
-				return new char[0];
-		}
-	}
-	
-			
-	public static String xorOld(String str) {
-        char[] cArr = new char[]{'\u3005', '\u3006'};
-        try {
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < str.length(); i++) {
-                stringBuilder.append((char) (str.charAt(i) ^ cArr[i % cArr.length]));
-            }
-            return stringBuilder.toString();
-        } catch (Exception e) {
-            return "";
-        }
     }
 }
